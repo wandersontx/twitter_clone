@@ -1,0 +1,17 @@
+{
+    "name":"twitter_clone",
+    "require": {
+        "php":">=7.0"
+    },
+    "authors": [
+        {
+            "name":"Wanderson Teixeira"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "App\\":"App/",
+            "MF\\":"vendor/MF/"
+        }
+    }
+}
