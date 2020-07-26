@@ -73,9 +73,24 @@ class Usuario extends Model{
     }
 
     public function getAll(){
-        $query = "select id, nome, email from usuarios where nome like ?";
+        $query = "
+        select
+         u.id, u.nome, u.email,
+         (
+            select 
+             count(*)
+            from
+            usuarios_seguidores as us
+            where
+             us.id_usuario = :id_usuario and us.id_usuario_seguindo = u.id
+         ) as seguindo_sn
+        from
+         usuarios as u
+        where
+         nome like :nome and id != :id_usuario";
         $stmt = $this->db->prepare($query);
-        $stmt->bindValue(1, '%'.$this->__get('nome').'%');
+        $stmt->bindValue(':nome', '%'.$this->__get('nome').'%');
+        $stmt->bindValue(':id_usuario', $this->__get('id'));
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
