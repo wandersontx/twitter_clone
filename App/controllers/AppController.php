@@ -27,9 +27,21 @@ class AppController extends Action{
     public function validaAutenticacao(){
         session_start();
         if(!isset($_SESSION['id']) || $_SESSION['id'] == '' || !isset($_SESSION['nome']) || $_SESSION['nome'] == ''){
-            header('Location: /login=erro');
+            header('Location:/login=erro');
+        }        
+    }
+
+    public function quemSeguir(){
+        $this->validaAutenticacao(); 
+        $pequisarPor = isset($_GET['pesquisarPor']) ? $_GET['pesquisarPor'] : '';
+        $usuarios = array();
+        if(!empty($pequisarPor)){
+            $usuario = Container::getModel('Usuario');
+            $usuario->__set('nome', $pequisarPor);
+            $usuarios = $usuario->getAll();           
         }
-        
+        $this->view->usuarios = $usuarios;
+        $this->render('quemSeguir');
     }
 }
 
