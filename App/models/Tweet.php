@@ -28,9 +28,6 @@ class Tweet extends Model{
          return $this;
     }
 
-
-
-    //retrieve
     public function getAll(){
         $query = "
         select
@@ -39,15 +36,23 @@ class Tweet extends Model{
          tweets as t
          left join usuarios as u on (t.id_usuario = u.id)
         where
-         t.id_usuario = ?
+         t.id_usuario = :id_usuario
+         or t.id_usuario in (select id_usuario_seguindo from usuarios_seguidores where id_usuario= :id_usuario)
         order by
          t.data desc";
         $stmt = $this->db->prepare($query);
-        $stmt->bindValue(1, $this->__get('id_usuario'));
+        $stmt->bindValue(":id_usuario", $this->__get('id_usuario'));
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function excluir($id_twiter){
+       $query = "delete from tweets where id = ? and id_usuario = ?";
+       $stmt = $this->db->prepare($query);
+       $stmt->bindValue(1, $id_twiter);
+       $stmt->bindValue(2, $_SESSION['id']);
+       $stmt->execute();       
+    }
 
 }
 ?>
