@@ -18,8 +18,7 @@ class AppController extends Action{
         $deslocamento = ($pagina -1 ) * $totalRegistrosPagina;
       
         $tweets = $tweet->getPorPagina($totalRegistrosPagina, $deslocamento);         
-        $total_twitters = $tweet->getTotalRegistros();      
-        print_r($total_twitters);   
+        $total_twitters = $tweet->getTotalRegistros();         
         $this->view->total_de_paginas = ceil($total_twitters['total'] / $totalRegistrosPagina);
         $this->view->tweets = $tweets;
         $this->view->pagina_ativa = $pagina;
