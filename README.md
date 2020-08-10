@@ -7,11 +7,26 @@ Twitter clone
 </h1>
 
 
+###  __Features__  
+  * Inscreva-se
+  * Siga outras pessoas
+  * Compartilhe seus pensamentos
+  
+
 ###  __Features__
-  * [Bootstrap](https://getbootstrap.com/) framework para desenvolvimento de sites responsivos.
+* PHP
+* MYSQL
+* Bootstrap
+* HTML/CSS
+
+
+###  __Hosting__
+* [infinityfree](https://infinityfree.net/)
+
   
 ###  __Getting started__
-1. Clone esse repostiorio usando `git clone https://github.com/wandersontx/spotify.git` <br>
-2. Click em index.html
+1. Clique no link [twiiterclonetx.epizy.com](http://twitterclonetx.epizy.com/) <br>
+2. Inscreva-se
+3. Siga outras pessoas, escreva algo...
 
 
