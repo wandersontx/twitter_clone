@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="https://backuptx.s3-sa-east-1.amazonaws.com/twitter.png" alt="twitter_clone" width="800" style="border:2px solid blue;">
+  <img src="https://backuptx.s3-sa-east-1.amazonaws.com/twitter02.png" alt="twitter_clone" width="800" style="border:2px solid blue;">
 <br>
 <br>
 Twitter clone
