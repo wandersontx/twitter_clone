@@ -13,7 +13,7 @@ Twitter clone
   * Compartilhe seus pensamentos
   
 
-###  __Features__
+###  __Technologies__
 * PHP
 * MYSQL
 * Bootstrap
