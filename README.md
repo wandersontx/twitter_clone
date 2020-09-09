@@ -6,6 +6,8 @@
 Twitter clone
 </h1>
 
+<img src="https://drivertx.s3-sa-east-1.amazonaws.com/twitter_clone.gif" alt="twitter_clone" width="480" style="border:2px solid blue;">
+
 
 ###  __Features__  
   * Inscreva-se
@@ -29,6 +31,6 @@ Twitter clone
 2. Inscreva-se
 3. Siga outras pessoas, escreva algo...
 
-###  __Gif__
-<img src="https://drivertx.s3-sa-east-1.amazonaws.com/home_twiiter.png" alt="twitter_clone" width="480" style="border:2px solid blue;">
+
+
 
